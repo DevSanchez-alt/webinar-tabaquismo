@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Outfit", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: var(--font-sans);
+  background-color: #F8FAFC;
+}
+
+/* Custom scrollbar to avoid layout thrashing */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
