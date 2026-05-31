@@ -1,6 +1,74 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { HeartCrack, Wind, Activity, CheckCircle, Search, ShieldCheck, HeartHandshake, FileWarning, Scale, TrendingUp } from 'lucide-react';
+
+const CustomPassiveSmokeIcon = ({ className, strokeWidth }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth || 2} strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M12 21.5c-4.4 0-8-3.6-8-8 0-3.3 2-6.2 5-7.4" />
+    <path d="M20 13.5c0 4.4-3.6 8-8 8" />
+    <path d="M16 4.5c.9.5 1.7 1.2 2.3 2" />
+    <path d="M12 4v4" />
+    <path d="M15 6l-2 2" />
+    <path d="M9 6l2 2" />
+  </svg>
+);
+
+const CustomMonitorIcon = ({ className, strokeWidth }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth || 2} strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <rect x="2" y="3" width="20" height="14" rx="2" />
+    <line x1="8" y1="21" x2="16" y2="21" />
+    <line x1="12" y1="17" x2="12" y2="21" />
+    <path d="M6 10l3-3 4 4 5-5" />
+  </svg>
+);
+
+const CustomProtectIcon = ({ className, strokeWidth }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth || 2} strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    <path d="M9 12l2 2 4-4" />
+  </svg>
+);
+
+const CustomOfferIcon = ({ className, strokeWidth }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth || 2} strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+    <path d="M12 10v4" />
+    <path d="M10 12h4" />
+  </svg>
+);
+
+const CustomWarnIcon = ({ className, strokeWidth }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth || 2} strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+    <line x1="12" y1="9" x2="12" y2="13" />
+    <line x1="12" y1="17" x2="12.01" y2="17" />
+  </svg>
+);
+
+const CustomEnforceIcon = ({ className, strokeWidth }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth || 2} strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+    <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+    <line x1="6" y1="1" x2="6" y2="4" />
+    <line x1="10" y1="1" x2="10" y2="4" />
+    <line x1="14" y1="1" x2="14" y2="4" />
+  </svg>
+);
+
+const CustomRaiseIcon = ({ className, strokeWidth }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth || 2} strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <line x1="12" y1="1" x2="12" y2="23" />
+    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+  </svg>
+);
+
+const CustomProtocolIcon = ({ className, strokeWidth }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth || 2} strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M9 12h6" />
+    <path d="M12 9v6" />
+    <path d="M8 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-3" />
+    <path d="M15 3a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2" />
+  </svg>
+);
 
 export const Slide11 = () => {
   return (
@@ -99,7 +167,7 @@ export const Slide13 = () => {
           initial={{ x: -50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.6 }}
           className="bg-white/60 backdrop-blur-xl p-8 rounded-[32px] border border-white shadow-lg"
         >
-          <HeartCrack className="w-16 h-16 text-rose-500 mb-4" />
+          <CustomPassiveSmokeIcon className="w-16 h-16 text-rose-500 mb-4" />
           <h2 className="text-3xl font-bold text-slate-800 mb-4">Tabaquismo Pasivo</h2>
           <p className="text-xl text-slate-600">El "Humo de Tabaco Ajeno" causa infecciones respiratorias severas y asma en infantes, y enfermedades cardíacas en familiares no fumadores.</p>
         </motion.div>
@@ -125,12 +193,12 @@ export const Slide13 = () => {
 
 export const Slide14 = () => {
   const mpower = [
-    { letter: "M", title: "Monitorizar", icon: Search },
-    { letter: "P", title: "Proteger (Libre de Humo)", icon: ShieldCheck },
-    { letter: "O", title: "Ofrecer Apoyo", icon: HeartHandshake },
-    { letter: "W", title: "Warn (Advertir)", icon: FileWarning },
-    { letter: "E", title: "Enforce (Prohibir pub.)", icon: Scale },
-    { letter: "R", title: "Raise (Impuestos)", icon: TrendingUp },
+    { letter: "M", title: "Monitorizar", icon: CustomMonitorIcon },
+    { letter: "P", title: "Proteger (Libre de Humo)", icon: CustomProtectIcon },
+    { letter: "O", title: "Ofrecer Apoyo", icon: CustomOfferIcon },
+    { letter: "W", title: "Warn (Advertir)", icon: CustomWarnIcon },
+    { letter: "E", title: "Enforce (Prohibir pub.)", icon: CustomEnforceIcon },
+    { letter: "R", title: "Raise (Impuestos)", icon: CustomRaiseIcon },
   ];
 
   return (
@@ -152,6 +220,50 @@ export const Slide14 = () => {
             <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-3"><item.icon className="w-6 h-6" /></div>
             <h3 className="text-2xl font-black text-slate-800 mb-1">{item.letter}</h3>
             <h4 className="text-sm md:text-base font-bold text-slate-600">{item.title}</h4>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export const Slide14B = () => {
+  const steps = [
+    { title: "Intervención Breve (Las 5 A's)", desc: "Averiguar, Aconsejar, Analizar, Ayudar y Acordar seguimientos.", color: "bg-blue-50", border: "border-blue-200" },
+    { title: "Terapia de Reemplazo (TRN)", desc: "Parches, chicles o pastillas para controlar el síndrome de abstinencia de manera progresiva.", color: "bg-emerald-50", border: "border-emerald-200" },
+    { title: "Tratamiento Farmacológico", desc: "Uso de medicamentos de primera línea (ej. Vareniclina, Bupropión) bajo estricta supervisión.", color: "bg-purple-50", border: "border-purple-200" },
+    { title: "Apoyo Cognitivo-Conductual", desc: "Terapia psicológica para identificar desencadenantes y manejar recaídas.", color: "bg-orange-50", border: "border-orange-200" }
+  ];
+
+  return (
+    <div className="flex flex-col w-full h-full pt-10 px-8 items-center text-center justify-center pb-20 overflow-y-auto">
+      <motion.h2 
+        initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}
+        className="text-4xl md:text-6xl font-bold text-[#0F172A] mb-6" style={{ fontFamily: 'var(--font-display)'}}
+      >
+        Protocolo Clínico de Cesación
+      </motion.h2>
+
+      <p className="text-xl md:text-2xl text-slate-500 mb-10 max-w-4xl">
+        El estándar médico para tratar la dependencia a la nicotina combina estrategias conductuales y farmacológicas.
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-[1100px]">
+        {steps.map((step, i) => (
+          <motion.div 
+            key={i} 
+            initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }} 
+            animate={{ opacity: 1, x: 0 }} 
+            transition={{ delay: i * 0.15, type: "spring" }} 
+            className={`p-6 rounded-[24px] shadow-sm border ${step.border} ${step.color} flex flex-col items-start text-left`}
+          >
+            <div className="flex items-center gap-4 mb-3">
+               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm border border-slate-200">
+                  <CustomProtocolIcon className="w-6 h-6 text-slate-700" />
+               </div>
+               <h3 className="text-2xl font-bold text-slate-800">{step.title}</h3>
+            </div>
+            <p className="text-lg text-slate-600 pl-16">{step.desc}</p>
           </motion.div>
         ))}
       </div>

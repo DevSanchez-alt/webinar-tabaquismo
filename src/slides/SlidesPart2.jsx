@@ -1,6 +1,38 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Flame, Wind, Activity, AlertCircle } from 'lucide-react';
+
+const CustomFlameIcon = ({ className, strokeWidth }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth || 2} strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
+  </svg>
+);
+
+const CustomVapeWindIcon = ({ className, strokeWidth }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth || 2} strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M12.8 19.6A2 2 0 1 0 14 16H2" />
+    <path d="M17.5 8a2.5 2.5 0 1 0 2-4H2" />
+    <path d="M9.8 4.4A2 2 0 1 1 11 8H2" />
+    <path d="M19.5 16a2.5 2.5 0 1 1-2 4H2" />
+  </svg>
+);
+
+const CustomHeartbeatIcon = ({ className, strokeWidth }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth || 2} strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+  </svg>
+);
+
+const CustomDNAMutationIcon = ({ className, strokeWidth }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth || 2} strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M2 15c6.667-6 13.333 0 20-6" />
+    <path d="M9 22c1.798-1.579 2.791-3.328 3.25-5" />
+    <path d="M11.75 7c.459-1.672 1.452-3.421 3.25-5" />
+    <line x1="8" y1="12" x2="16" y2="12" />
+    <line x1="5" y1="18" x2="7" y2="15.5" />
+    <line x1="17" y1="8.5" x2="19" y2="6" />
+    <circle cx="12" cy="12" r="3" fill="currentColor" stroke="none" />
+  </svg>
+);
 
 export const Slide06 = () => {
   return (
@@ -89,7 +121,7 @@ export const Slide07 = () => {
             className={`flex flex-col text-left p-6 md:p-8 rounded-[24px] border ${sub.border} ${sub.color} shadow-lg w-full md:w-[calc(33%-1rem)]`}
           >
             <div className="flex items-center gap-3 mb-4">
-               {sub.type === 'cigarro' ? <Flame className="w-6 h-6 text-slate-700" /> : <Wind className="w-6 h-6 text-cyan-600" />}
+               {sub.type === 'cigarro' ? <CustomFlameIcon className="w-6 h-6 text-slate-700" /> : <CustomVapeWindIcon className="w-6 h-6 text-cyan-600" />}
                <span className={`text-sm font-bold uppercase tracking-widest ${sub.type === 'cigarro' ? 'text-slate-500' : 'text-cyan-600'}`}>
                  {sub.type === 'cigarro' ? 'Combustión' : 'Aerosol Térmico'}
                </span>
@@ -124,11 +156,11 @@ export const Slide08 = () => {
           </div>
           <div className="flex flex-col gap-4">
              <div className="flex items-start gap-4">
-               <Activity className="w-8 h-8 text-rose-500 flex-shrink-0" />
+               <CustomHeartbeatIcon className="w-8 h-8 text-rose-500 flex-shrink-0" />
                <div><strong className="text-slate-800 block">Cardiovascular:</strong> Disfunción endotelial, rigidez arterial e infartos prematuros.</div>
              </div>
              <div className="flex items-start gap-4">
-               <AlertCircle className="w-8 h-8 text-purple-500 flex-shrink-0" />
+               <CustomDNAMutationIcon className="w-8 h-8 text-purple-500 flex-shrink-0" />
                <div><strong className="text-slate-800 block">ADN / Oncológico:</strong> Inhibe la apoptosis celular, propiciando mutaciones a largo plazo.</div>
              </div>
           </div>
@@ -147,7 +179,7 @@ export const Slide08 = () => {
               </svg>
             </div>
             <div className="w-full flex items-center justify-center gap-2 mt-4 text-rose-500 font-bold bg-rose-500/10 py-2 rounded-lg border border-rose-500/20">
-              <Activity className="w-6 h-6 animate-pulse" />
+              <CustomHeartbeatIcon className="w-6 h-6 animate-pulse" />
               <span>Opacidades Bilaterales Detectadas</span>
             </div>
          </div>
