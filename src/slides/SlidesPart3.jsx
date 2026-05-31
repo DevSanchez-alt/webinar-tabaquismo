@@ -171,8 +171,10 @@ export const Slide15 = () => {
       </motion.h2>
 
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="relative z-10 flex flex-col items-center mt-12 bg-white/10 backdrop-blur-md border border-white/20 p-12 rounded-[32px]">
-          <div className="bg-white p-4 rounded-2xl mb-6 shadow-xl">
+          <div className="bg-white p-6 rounded-3xl mb-6 shadow-xl flex flex-col items-center gap-6">
              <img src={`${import.meta.env.BASE_URL}qr.png?v=2`} alt="Código QR" className="w-32 h-32 md:w-48 md:h-48 object-contain" />
+             <div className="w-full h-px bg-slate-200"></div>
+             <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Logotipo_IEU.svg" alt="IEU Universidad" className="h-10 md:h-14 object-contain" />
          </div>
          <h3 className="text-xl md:text-3xl font-bold mb-2">Universidad IEU</h3>
          <p className="text-lg md:text-xl text-white/90 font-medium">(01) Herramientas Tecnológicas para el Profesional de la Salud</p>
