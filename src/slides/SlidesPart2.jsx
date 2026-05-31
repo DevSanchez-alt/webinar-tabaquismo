@@ -245,38 +245,68 @@ export const Slide10 = () => {
     <div className="flex flex-col w-full h-full pt-6 md:pt-10 px-4 md:px-8 items-center text-center overflow-y-auto pb-10">
       <motion.h2 
         initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}
-        className="text-4xl md:text-6xl font-bold text-[#0F172A] mb-8" style={{ fontFamily: 'var(--font-display)'}}
+        className="text-4xl md:text-6xl font-bold text-[#0F172A] mb-4" style={{ fontFamily: 'var(--font-display)'}}
       >
         Prevalencia por Región (OMS)
       </motion.h2>
 
-      <div className="w-full max-w-[1000px] h-[400px] md:h-[500px] relative mt-12 flex flex-col justify-end pb-20 border-b-4 border-slate-200">
-         <div className="absolute inset-0 flex flex-col justify-between pb-20 z-0 opacity-20 pointer-events-none">
-            <div className="w-full h-px bg-slate-400"></div><div className="w-full h-px bg-slate-400"></div><div className="w-full h-px bg-slate-400"></div>
+      <p className="text-xl md:text-2xl text-slate-500 mb-4 max-w-4xl">
+        Porcentaje de la población total que consume tabaco. Aunque Europa lidera actualmente, la industria tabacalera enfoca sus esfuerzos de crecimiento en África.
+      </p>
+
+      <div className="w-full max-w-[1000px] h-[400px] md:h-[450px] relative mt-12 flex flex-col justify-end pb-[4.5rem] border-b-4 border-slate-300">
+         {/* Eje Y con Líneas y Porcentajes */}
+         <div className="absolute inset-0 flex flex-col justify-between pb-[4.5rem] z-0 pointer-events-none">
+            <div className="w-full border-t border-slate-300 border-dashed flex justify-start items-center">
+              <span className="text-slate-400 text-sm md:text-base font-bold -mt-3 bg-slate-50 pr-2">30%</span>
+            </div>
+            <div className="w-full border-t border-slate-300 border-dashed flex justify-start items-center">
+              <span className="text-slate-400 text-sm md:text-base font-bold -mt-3 bg-slate-50 pr-2">20%</span>
+            </div>
+            <div className="w-full border-t border-slate-300 border-dashed flex justify-start items-center">
+              <span className="text-slate-400 text-sm md:text-base font-bold -mt-3 bg-slate-50 pr-2">10%</span>
+            </div>
          </div>
 
-         <div className="flex justify-center items-end gap-16 w-full z-10">
+         {/* Barras */}
+         <div className="flex justify-center items-end gap-8 md:gap-20 w-full z-10 pl-10">
+            {/* Europa */}
             <div className="flex flex-col items-center">
-               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="bg-white/80 px-4 py-2 rounded-xl mb-4"><span className="text-2xl md:text-3xl font-black text-rose-600">25.3%</span></motion.div>
-               <motion.div initial={{ height: 0 }} animate={{ height: 300 }} transition={{ duration: 1, type: "spring" }} className="w-24 md:w-40 bg-gradient-to-t from-rose-600 to-rose-400 rounded-t-[32px]"></motion.div>
-               <h4 className="text-xl md:text-2xl font-bold text-slate-800 mt-4">Europa</h4>
+               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="bg-white/80 px-4 py-2 rounded-xl mb-3 shadow-sm border border-slate-200">
+                 <span className="text-2xl md:text-3xl font-black text-rose-600">25.3%</span>
+               </motion.div>
+               {/* 25.3 / 30 * 100 = 84% height approx */}
+               <motion.div initial={{ height: 0 }} animate={{ height: '84%' }} transition={{ duration: 1, type: "spring" }} className="w-24 md:w-32 bg-gradient-to-t from-rose-600 to-rose-400 rounded-t-[32px] absolute bottom-[4.5rem]"></motion.div>
+               <h4 className="text-xl md:text-2xl font-bold text-slate-800 mt-4 absolute -bottom-8">Europa</h4>
+               <p className="text-slate-500 font-medium text-sm md:text-base absolute -bottom-14 whitespace-nowrap">Mayor prevalencia actual</p>
             </div>
+            {/* Pacífico */}
             <div className="flex flex-col items-center">
-               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="bg-white/80 px-4 py-2 rounded-xl mb-4"><span className="text-2xl md:text-3xl font-black text-orange-500">24.6%</span></motion.div>
-               <motion.div initial={{ height: 0 }} animate={{ height: 280 }} transition={{ duration: 1, delay: 0.2, type: "spring" }} className="w-24 md:w-40 bg-gradient-to-t from-orange-500 to-orange-300 rounded-t-[32px]"></motion.div>
-               <h4 className="text-xl md:text-2xl font-bold text-slate-800 mt-4">Pacífico</h4>
+               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="bg-white/80 px-4 py-2 rounded-xl mb-3 shadow-sm border border-slate-200">
+                 <span className="text-2xl md:text-3xl font-black text-orange-500">24.6%</span>
+               </motion.div>
+               {/* 24.6 / 30 * 100 = 82% height approx */}
+               <motion.div initial={{ height: 0 }} animate={{ height: '82%' }} transition={{ duration: 1, delay: 0.2, type: "spring" }} className="w-24 md:w-32 bg-gradient-to-t from-orange-500 to-orange-300 rounded-t-[32px] absolute bottom-[4.5rem]"></motion.div>
+               <h4 className="text-xl md:text-2xl font-bold text-slate-800 mt-4 absolute -bottom-8">Pacífico</h4>
+               <p className="text-slate-500 font-medium text-sm md:text-base absolute -bottom-14 whitespace-nowrap">Principal consumidor masc.</p>
             </div>
+            {/* África */}
             <div className="flex flex-col items-center">
-               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className="bg-white/80 px-4 py-2 rounded-xl mb-4"><span className="text-2xl md:text-3xl font-black text-blue-600">Alerta</span></motion.div>
-               <motion.div initial={{ height: 0 }} animate={{ height: 180 }} transition={{ duration: 1, delay: 0.4, type: "spring" }} className="w-24 md:w-40 bg-gradient-to-t from-blue-600 to-blue-400 rounded-t-[32px]"></motion.div>
-               <h4 className="text-xl md:text-2xl font-bold text-slate-800 mt-4">África</h4>
+               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className="bg-white/90 px-4 py-2 rounded-xl mb-3 border-2 border-blue-400 shadow-md relative">
+                 <span className="text-2xl md:text-3xl font-black text-blue-600">14.0%</span>
+                 <span className="absolute -top-3 -right-3 bg-rose-500 text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-full shadow-lg">En Riesgo</span>
+               </motion.div>
+               {/* 14.0 / 30 * 100 = 46% height approx */}
+               <motion.div initial={{ height: 0 }} animate={{ height: '46%' }} transition={{ duration: 1, delay: 0.4, type: "spring" }} className="w-24 md:w-32 bg-gradient-to-t from-blue-600 to-blue-400 rounded-t-[32px] absolute bottom-[4.5rem]"></motion.div>
+               <h4 className="text-xl md:text-2xl font-bold text-slate-800 mt-4 absolute -bottom-8">África</h4>
+               <p className="text-slate-500 font-medium text-sm md:text-base absolute -bottom-14 whitespace-nowrap">Blanco de la industria (↑)</p>
             </div>
          </div>
       </div>
 
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }} className="mt-6 bg-slate-100 px-6 py-3 rounded-full border border-slate-200">
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }} className="mt-20 bg-slate-100 px-6 py-3 rounded-full border border-slate-200">
         <p className="text-slate-600 font-medium text-sm md:text-lg">
-          <strong className="text-slate-800">Figura 2:</strong> Gráfico de barras que representa la Prevalencia de Consumo de Tabaco por Región (OMS).
+          <strong className="text-slate-800">Figura 2:</strong> Gráfico de barras comparativo de la Prevalencia de Consumo de Tabaco.
         </p>
       </motion.div>
     </div>
