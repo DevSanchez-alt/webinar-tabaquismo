@@ -271,6 +271,62 @@ export const Slide14B = () => {
   );
 };
 
+export const Slide14C = () => {
+  const timeline = [
+    { time: "20 Minutos", desc: "La presión arterial y el ritmo cardíaco comienzan a normalizarse.", color: "bg-emerald-500", icon: "M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" },
+    { time: "12 Horas", desc: "Los niveles de monóxido de carbono en la sangre vuelven a la normalidad.", color: "bg-teal-500", icon: "M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" },
+    { time: "2 a 12 Semanas", desc: "Mejora la circulación sanguínea y la función pulmonar aumenta.", color: "bg-cyan-500", icon: "M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" },
+    { time: "1 a 9 Meses", desc: "Disminuyen drásticamente la tos y la dificultad para respirar.", color: "bg-blue-500", icon: "M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" },
+    { time: "1 Año", desc: "El riesgo de cardiopatía coronaria es 50% menor que el de un fumador.", color: "bg-indigo-500", icon: "M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" },
+    { time: "10 Años", desc: "El riesgo de cáncer de pulmón cae a la mitad del de un fumador activo.", color: "bg-violet-500", icon: "M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" }
+  ];
+
+  return (
+    <div className="flex flex-col w-full h-full pt-10 px-4 md:px-8 items-center pb-20 overflow-y-auto">
+      <motion.h2 
+        initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}
+        className="text-4xl md:text-6xl font-bold text-[#0F172A] mb-4 text-center" style={{ fontFamily: 'var(--font-display)'}}
+      >
+        Línea de Tiempo de Recuperación
+      </motion.h2>
+      
+      <p className="text-xl md:text-2xl text-slate-500 mb-12 max-w-4xl text-center">
+        El cuerpo humano tiene una asombrosa capacidad de reparación. Esto es lo que sucede desde el momento en que se apaga el último cigarro.
+      </p>
+
+      <div className="w-full max-w-[900px] relative">
+         {/* Línea central */}
+         <div className="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-1 bg-slate-200 -translate-x-1/2 rounded-full"></div>
+         
+         <div className="flex flex-col gap-8 md:gap-12 w-full relative z-10">
+           {timeline.map((item, i) => (
+             <motion.div 
+               key={i} 
+               initial={{ opacity: 0, y: 50 }} 
+               whileInView={{ opacity: 1, y: 0 }} 
+               viewport={{ once: true, margin: "-50px" }}
+               transition={{ duration: 0.5, delay: i * 0.1 }}
+               className={`flex flex-col md:flex-row items-start md:items-center w-full ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+             >
+               <div className={`w-full md:w-1/2 pl-16 md:pl-0 ${i % 2 === 0 ? 'md:pr-12 text-left md:text-right' : 'md:pl-12 text-left'}`}>
+                 <div className="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
+                   <h3 className={`text-2xl font-black mb-2 text-slate-800`}>{item.time}</h3>
+                   <p className="text-lg text-slate-600">{item.desc}</p>
+                 </div>
+               </div>
+               
+               {/* Nodo Central */}
+               <div className="absolute left-[20px] md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full border-4 border-white shadow-md flex items-center justify-center text-white" style={{ backgroundColor: `var(--${item.color.split('-')[1]}-${item.color.split('-')[2]})` }}>
+                 <div className={`w-full h-full rounded-full ${item.color}`}></div>
+               </div>
+             </motion.div>
+           ))}
+         </div>
+      </div>
+    </div>
+  );
+};
+
 export const Slide15 = () => {
   return (
     <div className="flex flex-col w-full h-full bg-gradient-to-br from-[#0F172A] via-slate-900 to-[#1e1b4b] items-center justify-center text-center relative overflow-hidden text-white px-8">
