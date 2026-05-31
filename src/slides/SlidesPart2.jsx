@@ -254,7 +254,7 @@ export const Slide10 = () => {
         Aunque Europa lidera los porcentajes actuales, la industria tabacalera enfoca agresivamente sus esfuerzos de crecimiento en el continente africano.
       </p>
 
-      <div className="w-full max-w-[1000px] h-[400px] md:h-[480px] relative mt-8 flex flex-col justify-end pb-24 border-b-4 border-slate-200">
+      <div className="w-full max-w-[1000px] h-[350px] md:h-[420px] relative mt-16 flex flex-col justify-end pb-24 border-b-4 border-slate-200">
          <div className="absolute inset-0 flex flex-col justify-between pb-24 z-0 opacity-20 pointer-events-none">
             <div className="w-full h-px bg-slate-400"></div><div className="w-full h-px bg-slate-400"></div><div className="w-full h-px bg-slate-400"></div>
          </div>
@@ -262,31 +262,31 @@ export const Slide10 = () => {
          <div className="flex justify-center items-end gap-10 md:gap-20 w-full z-10">
             {/* Europa */}
             <div className="flex flex-col items-center">
-               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="bg-white/80 px-4 py-2 rounded-xl mb-4 shadow-sm border border-rose-100">
+               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="bg-white/80 px-4 py-2 rounded-xl mb-4 shadow-sm border border-rose-100 z-10">
                  <span className="text-2xl md:text-4xl font-black text-rose-600">25.3%</span>
                </motion.div>
-               <motion.div initial={{ height: 0 }} animate={{ height: 300 }} transition={{ duration: 1, type: "spring" }} className="w-24 md:w-40 bg-gradient-to-t from-rose-600 to-rose-400 rounded-t-[32px]"></motion.div>
+               <motion.div initial={{ height: 0 }} animate={{ height: 220 }} transition={{ duration: 1, type: "spring" }} className="w-24 md:w-40 bg-gradient-to-t from-rose-600 to-rose-400 rounded-t-[32px]"></motion.div>
                <h4 className="text-2xl md:text-3xl font-bold text-slate-800 mt-4">Europa</h4>
                <span className="mt-2 bg-rose-50 text-rose-600 text-xs md:text-sm font-bold px-3 py-1 rounded-full border border-rose-200 whitespace-nowrap">Mayor Prevalencia</span>
             </div>
             
             {/* Pacífico */}
             <div className="flex flex-col items-center">
-               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="bg-white/80 px-4 py-2 rounded-xl mb-4 shadow-sm border border-orange-100">
+               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="bg-white/80 px-4 py-2 rounded-xl mb-4 shadow-sm border border-orange-100 z-10">
                  <span className="text-2xl md:text-4xl font-black text-orange-500">24.6%</span>
                </motion.div>
-               <motion.div initial={{ height: 0 }} animate={{ height: 280 }} transition={{ duration: 1, delay: 0.2, type: "spring" }} className="w-24 md:w-40 bg-gradient-to-t from-orange-500 to-orange-300 rounded-t-[32px]"></motion.div>
+               <motion.div initial={{ height: 0 }} animate={{ height: 200 }} transition={{ duration: 1, delay: 0.2, type: "spring" }} className="w-24 md:w-40 bg-gradient-to-t from-orange-500 to-orange-300 rounded-t-[32px]"></motion.div>
                <h4 className="text-2xl md:text-3xl font-bold text-slate-800 mt-4">Pacífico</h4>
                <span className="mt-2 bg-orange-50 text-orange-600 text-xs md:text-sm font-bold px-3 py-1 rounded-full border border-orange-200 whitespace-nowrap">Principal Consumidor Masc.</span>
             </div>
             
             {/* África */}
             <div className="flex flex-col items-center">
-               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className="bg-white/90 px-6 py-2 rounded-xl mb-4 shadow-xl border-2 border-blue-500 relative">
+               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className="bg-white/90 px-6 py-2 rounded-xl mb-4 shadow-xl border-2 border-blue-500 relative z-10">
                  <span className="text-2xl md:text-4xl font-black text-blue-600">Alerta</span>
                  <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }} transition={{ repeat: Infinity, duration: 1.5 }} className="absolute -top-2 -right-2 w-4 h-4 bg-rose-500 rounded-full border-2 border-white"></motion.div>
                </motion.div>
-               <motion.div initial={{ height: 0 }} animate={{ height: 180 }} transition={{ duration: 1, delay: 0.4, type: "spring" }} className="w-24 md:w-40 bg-gradient-to-t from-blue-600 to-blue-400 rounded-t-[32px]"></motion.div>
+               <motion.div initial={{ height: 0 }} animate={{ height: 130 }} transition={{ duration: 1, delay: 0.4, type: "spring" }} className="w-24 md:w-40 bg-gradient-to-t from-blue-600 to-blue-400 rounded-t-[32px]"></motion.div>
                <h4 className="text-2xl md:text-3xl font-bold text-slate-800 mt-4">África</h4>
                <span className="mt-2 bg-blue-50 text-blue-600 text-xs md:text-sm font-bold px-3 py-1 rounded-full border border-blue-200 whitespace-nowrap">Nuevo Blanco (↑)</span>
             </div>
